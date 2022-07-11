@@ -2,7 +2,7 @@
 title: Blog 2
 description: Lorem ipsum
 date: 2022-07-11T12:21:58.929Z
-image: stubhub-logo.svg
+image: /images/stubhub-logo.svg
 ---
 **Test bold**
 

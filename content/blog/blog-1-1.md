@@ -2,7 +2,7 @@
 title: blog 1
 description: Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsum
 date: 2022-07-11T11:47:52.418Z
-image: yelplogoaugust2021.jpg
+image: /images/yelplogoaugust2021.jpg
 ---
 Are you thinking about a job switch? Are you rummaging through job portals and earmarking newspapers? Dear reader, you are going about it all wrong. You need to look at a smarter way of keeping track of open positions in organizations that you aspire to work in.
 
