@@ -1,0 +1,28 @@
+.blog {
+  background-color: $white-offset;
+
+  &-list {
+    height: 100%;
+    border: 1px solid $white-offset;
+    border-radius: 3px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    &-con {
+      padding: 20px;
+    }
+    &-title {
+      text-align: left;
+    }
+    &-content {
+      margin-bottom: 0;
+      margin-top: auto;
+    }
+  }
+}
