@@ -1,6 +1,7 @@
 ---
 title: blog 1
 description: Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsum
+author: test
 date: 2022-07-11T11:47:52.418Z
 image: /images/yelplogoaugust2021.jpg
 ---
