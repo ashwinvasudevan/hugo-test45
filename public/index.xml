@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homepage on Hugo Serif Theme</title>
+    <title>test on Hugo Serif Theme</title>
     <link>/</link>
-    <description>Recent content in Homepage on Hugo Serif Theme</description>
+    <description>Recent content in test on Hugo Serif Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Feb 2018 17:01:34 +0700</lastBuildDate>
@@ -130,6 +130,16 @@ Ne verba patulosque numen vix libet Agitabitur signa lympha; non lacunae, mox cu
     </item>
     
     <item>
+      <title>blog 1</title>
+      <link>/blog/blog-1-1/</link>
+      <pubDate>Mon, 11 Jul 2022 11:47:52 +0000</pubDate>
+      
+      <guid>/blog/blog-1-1/</guid>
+      <description>Are you thinking about a job switch? Are you rummaging through job portals and earmarking newspapers? Dear reader, you are going about it all wrong. You need to look at a smarter way of keeping track of open positions in organizations that you aspire to work in.
+In November 2020 claimed that the average amount of time to find a job is 24 weeks. That’s a lot of time, and it must be well spent on searching for the right job, not sifting through endless web pages with sub-par filtering capabilities.</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>/about/</link>
       <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
@@ -142,10 +152,50 @@ Ne verba patulosque numen vix libet Agitabitur signa lympha; non lacunae, mox cu
     
     <item>
       <title>Contact</title>
+      <link>/blog/blog-1/</link>
+      <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
+      
+      <guid>/blog/blog-1/</guid>
+      <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
+   Day Opening Hours     Tuesday 8:30am - 5:00pm   Wednesday 8:30am - 5:00pm   Thursday 8:30am - 5:00pm   Friday 8:30am - 5:00pm   Saturday 10:am - 4:00pm   Sunday Closed    </description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
       <link>/contact/</link>
       <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
       
       <guid>/contact/</guid>
+      <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
+   Day Opening Hours     Tuesday 8:30am - 5:00pm   Wednesday 8:30am - 5:00pm   Thursday 8:30am - 5:00pm   Friday 8:30am - 5:00pm   Saturday 10:am - 4:00pm   Sunday Closed    </description>
+    </item>
+    
+    <item>
+      <title>Contact2</title>
+      <link>/blog/blog-2/</link>
+      <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
+      
+      <guid>/blog/blog-2/</guid>
+      <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
+   Day Opening Hours     Tuesday 8:30am - 5:00pm   Wednesday 8:30am - 5:00pm   Thursday 8:30am - 5:00pm   Friday 8:30am - 5:00pm   Saturday 10:am - 4:00pm   Sunday Closed    </description>
+    </item>
+    
+    <item>
+      <title>Contact2</title>
+      <link>/docs/doc-1/</link>
+      <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
+      
+      <guid>/docs/doc-1/</guid>
+      <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
+   Day Opening Hours     Tuesday 8:30am - 5:00pm   Wednesday 8:30am - 5:00pm   Thursday 8:30am - 5:00pm   Friday 8:30am - 5:00pm   Saturday 10:am - 4:00pm   Sunday Closed    </description>
+    </item>
+    
+    <item>
+      <title>Contact3</title>
+      <link>/blog/blog-3/</link>
+      <pubDate>Thu, 22 Feb 2018 17:01:34 +0700</pubDate>
+      
+      <guid>/blog/blog-3/</guid>
       <description>Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
    Day Opening Hours     Tuesday 8:30am - 5:00pm   Wednesday 8:30am - 5:00pm   Thursday 8:30am - 5:00pm   Friday 8:30am - 5:00pm   Saturday 10:am - 4:00pm   Sunday Closed    </description>
     </item>
