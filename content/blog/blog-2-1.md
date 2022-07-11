@@ -1,6 +1,7 @@
 ---
 title: Blog 2
 description: Lorem ipsum
+author: test
 date: 2022-07-11T12:21:58.929Z
 image: /images/stubhub-logo.svg
 ---
