@@ -2,13 +2,13 @@
 title: Blog 2
 description: Lorem ipsum
 date: 2022-07-11T12:21:58.929Z
-image: /images/stubhub-logo.svg
+image: stubhub-logo.svg
 ---
 **Test bold**
 
 ***Lorem ipsum***
 
-\[exmaple](<https://example.com/>)
+[exmaple](<https://example.com/>)
 
 
 
