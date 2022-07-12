@@ -87,6 +87,11 @@
     {{ $styles := resources.Get "css/markdown.css" | minify}}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
+    {{ "<!-- Markdown stylesheet -->" | safeHTML }}
+    {{ $styles := resources.Get "css/pricing.css" | minify}}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+
     {{ "<!-- jquery -->" | safeHTML }}
     <script src="{{ .Site.BaseURL }}plugins/jquery/jquery-1.12.4.js"></script>
   
