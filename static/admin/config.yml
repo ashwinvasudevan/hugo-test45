@@ -13,9 +13,22 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "docs" # Used in routes, e.g., /admin/collections/post
+    label: "Docs" # Used in the UI
+    folder: "content/docs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { type: "Type", name: "type", widget: "select",  options: ["Getting Started"] }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
