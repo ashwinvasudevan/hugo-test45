@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Hugo Serif Theme</title>
+    <title>Blogs on Scrapex Lite</title>
     <link>/blog/</link>
-    <description>Recent content in Blogs on Hugo Serif Theme</description>
+    <description>Recent content in Blogs on Scrapex Lite</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jul 2022 11:47:52 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jul 2022 13:22:26 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blog 3</title>
+      <link>/blog/blog-3-1/</link>
+      <pubDate>Mon, 11 Jul 2022 13:22:26 +0000</pubDate>
+      
+      <guid>/blog/blog-3-1/</guid>
+      <description>test</description>
+    </item>
+    
+    <item>
+      <title>Blog 2</title>
+      <link>/blog/blog-2-1/</link>
+      <pubDate>Mon, 11 Jul 2022 12:21:58 +0000</pubDate>
+      
+      <guid>/blog/blog-2-1/</guid>
+      <description>Test bold
+Lorem ipsum
+[exmaple](https://example.com/)
+let a = 1;
+ list 1 list2  </description>
+    </item>
     
     <item>
       <title>blog 1</title>
