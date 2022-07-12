@@ -57,3 +57,5 @@ collections:
             fields:
               - { label: desc, name: desc, widget: string }
               - { label: img, name: img, widget: image }
+          - { label: "PricingTitle", name: "pricingtitle", widget: "string" }
+          - { label: "PricingDesc", name: "pricingDesc", widget: "string" }
