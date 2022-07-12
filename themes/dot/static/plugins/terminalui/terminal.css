@@ -21,14 +21,5 @@
       border-radius: 50%;
       background: #ff605c;
       box-shadow: 20px 0 0 #ffbd44, 40px 0 0 #00ca4e; }
-    [data-terminalui] [data-terminalui-command] {
-      padding: 2px 0 2px 0;
-      white-space: pre-wrap; }
-      [data-terminalui] [data-terminalui-command]::before {
-        content: var(--prompt);
-        margin-right: 10px; }
-    [data-terminalui] [data-terminalui-output] {
-      padding: 2px 0 2px 0;
-      color: #c8c8c8;
-      white-space: pre-wrap; }
+    
   

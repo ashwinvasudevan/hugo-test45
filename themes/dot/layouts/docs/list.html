@@ -3,7 +3,7 @@
 <section class="single pt-5 bg-gray">
   <div class="container" id="breadcrumbsDesk" style="font-size: 1.5rem;">
     <div id="breadcrumbs" style="color:grey;">
-      <a href="{{ .Site.Params.siteURL }}">{{with .Site.Params.breadcrumbs.home}}{{ . }}{{ end }}</a>
+      <a href="{{ .Site.BaseURL }}">{{with .Site.Params.breadcrumbs.home}}{{ . }}{{ end }}</a>
       &#187;
       <span style="color:black;">{{ .Title}}</span>
     </div>
