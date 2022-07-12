@@ -1,44 +1,83 @@
 {{ "<!-- banner -->" | safeHTML }}
 <div class="container">
   <div class="row">
-    <div class="col-lg-9 text-center mx-auto">
-      <h1 class="mb-3">{{with .Site.Params.banner.title }}{{ . }}{{ end }}</h1>
-      <p style="opacity: .8; padding-bottom: 1rem;" class="mb-4">{{with .Site.Params.banner.description }}{{ . }}{{ end }}</p>
-      <div class="position-relative">
-        <input id="search" class="form-control" placeholder="{{ .Site.Params.banner.placeholder }}">
-        <!-- Javascript -->
-        <script>
-          $(function() {
-              var projects = [
-                  {{ range .Data.Pages }}
-                      {
-                          value: "{{ index (split .Title " > ") 1 }}",
-                          label: "{{ index (split .Title " > ") 1 }}",
-                          url:"{{ .Permalink }}"
-                      },
-                  {{ end }}
-              ];
-              $( "#search" ).autocomplete({
-                  minLength: 0,
-                  source: function(request, response) {
-                      var results = $.ui.autocomplete.filter(projects, request.term);  
-                      response(results.slice(0, 10));
-                  },
-                  select: function( event, ui ) {
-                      $( "#search" ).val( ui.item.label );
-                      $( "#project-id" ).val( ui.item.value );
-                      return false;
-                  }
-              })
-              .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
-                  return $( "<li>" )
-                  .append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
-                  .appendTo( ul );
-              };
-          });
-        </script>
+    <section class="enterprise-hero bg-pale-blue">
+      <div class="container pad-b-120">
+        <div class="row txt-center justify-content-center">
+          <div class="col-sm-12 col-md-10">
+            <h1 class="mr-t-80 mr-b-40">
+              Scalable, Secure and Reliable Monitoring for Enterprise Use
+            </h1>
+          </div>
+          {{ range .Params.features }}
+          <div class="col-sm-4 mr-b-30">
+            <h5>{{.line1}}<br class="d-none d-sm-inline" />{{.line2}}</h5>
+          </div>
+          {{ end }}
+          <div class="col-md-8">
+            <div class="position-relative">
+              <input
+                id="search"
+                class="form-control"
+                placeholder="{{ .Params.placeholder }}"
+              />
+              <!-- Javascript -->
+              <script>
+                // $(function() {
+                //     var projects = [
+                //         {{ range .Data.Pages }}
+                //             {
+                //                 value: "{{ index (split .Title " > ") 1 }}",
+                //                 label: "{{ index (split .Title " > ") 1 }}",
+                //                 url:"{{ .Permalink }}"
+                //             },
+                //         {{ end }}
+                //     ];
+                //     $( "#search" ).autocomplete({
+                //         minLength: 0,
+                //         source: function(request, response) {
+                //             var results = $.ui.autocomplete.filter(projects, request.term);
+                //             response(results.slice(0, 10));
+                //         },
+                //         select: function( event, ui ) {
+                //             $( "#search" ).val( ui.item.label );
+                //             $( "#project-id" ).val( ui.item.value );
+                //             return false;
+                //         }
+                //     })
+                //     .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+                //         return $( "<li>" )
+                //         .append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
+                //         .appendTo( ul );
+                //     };
+                // });
+              </script>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="enterprise-hero-illustrations">
+        <div class="container">
+          <img
+            src="/public/images/illustrations/servers-1.svg"
+            class="servers-1"
+          />
+          <img
+            src="/public/images/illustrations/servers-2.svg"
+            class="servers-2"
+          />
+        </div>
+      </div>
+      <div class="droplet-container">
+        <div class="container">
+          <img
+            src="/public/images/droplets/droplet-suitcase.svg"
+            class="extension-card-droplet droplet-suitcase"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </div>
+
 {{ "<!-- /banner -->" | safeHTML }}
