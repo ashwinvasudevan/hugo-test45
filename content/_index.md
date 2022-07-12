@@ -28,6 +28,9 @@ features2:
     img: /images/more-feature-7.svg
   - img: /images/more-feature-8.svg
     desc: Manage Version History of all changes
+pricingtitle: "Pricing "
+pricingDesc: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+  consectetur, adipisci velitN
 intro_image_hide_on_mobile: true
 description: Serif is a modern business theme for Hugo.
 meta_title: Hugo Serif Theme
