@@ -50,4 +50,10 @@ collections:
             fields:
               - { label: line1, name: line1, widget: string }
               - { label: line2, name: line2, widget: string }
-
+          - { label: "FeaturesTitle", name: "featurestitle", widget: "string" }
+          - label: features2
+            name: features2
+            widget: list
+            fields:
+              - { label: desc, name: desc, widget: string }
+              - { label: img, name: img, widget: image }

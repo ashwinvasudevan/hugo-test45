@@ -1,0 +1,17 @@
+{{ "<!-- features -->" | safeHTML }}
+<section class="feature-section nav-tab-section my-5 py-5" id="others">
+  <div class="container">
+    <div class="row txt-center justify-content-center">
+      <div class="col-12 col-md-10"><h2>{{.Params.featurestitle}}</h2></div>
+      {{ range .Params.features2 }}
+      <div class="col-6 col-sm-4 col-md-3 mr-t-120">
+        <div class="icon-title-block">
+          <img src="{{.img}}" alt="Feature Icon" class="it-icon" />
+          <p class="title">{{.desc}}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ "<!-- /features -->" | safeHTML }}
