@@ -59,3 +59,20 @@ collections:
               - { label: img, name: img, widget: image }
           - { label: "PricingTitle", name: "pricingtitle", widget: "string" }
           - { label: "PricingDesc", name: "pricingDesc", widget: "string" }
+          - label: pricing package
+            name: pricingpackage
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: description, name: desc, widget: string }
+              - { label: price, name: price, widget: string }
+          - label: pricing package details
+            name: pricingdetails
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - label: Value for all the packages
+                name: pricingvalues
+                widget: list
+                fields:
+                  - { label: Value, name: value, widget: string }

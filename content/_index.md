@@ -1,4 +1,14 @@
 ---
+pricingpackage:
+  - name: Free
+    desc: Best for testing and non-essential use
+    price: "0"
+  - desc: Ideal for individual usage
+    name: Starter
+    price: 12/mon
+  - name: Professional
+    price: 28/mon
+    desc: Ideal for advanced individual usage
 intro_image: images/illustrations/pointing.svg
 intro_image_absolute: true
 title: Scalable, Secure and Reliable Monitoring for Enterprise Use
@@ -32,6 +42,17 @@ pricingtitle: "Pricing "
 pricingDesc: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
   consectetur, adipisci velitN
 intro_image_hide_on_mobile: true
+pricingdetails:
+  - pricingvalues:
+      - value: "25"
+      - value: "50"
+      - value: "100"
+    name: Monitors
+  - name: Minimum Interval in cloud
+    pricingvalues:
+      - value: 6 hours
+      - value: 10 minutes
+      - value: 5 minutes
 description: Serif is a modern business theme for Hugo.
 meta_title: Hugo Serif Theme
 ---
