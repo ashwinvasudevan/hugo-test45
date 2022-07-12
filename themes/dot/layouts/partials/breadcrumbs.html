@@ -1,0 +1,7 @@
+<div id="breadcrumbs" style="color:grey;">
+    <a href="{{ .Site.Params.siteURL }}">{{with .Site.Params.breadcrumbs.home}}{{ . }}{{ end }}</a>
+    &#187;
+    <a href="{{ .Site.BaseURL }}">{{with .Site.Params.breadcrumbs.docs}}{{ . }}{{ end }}</a>
+    &#187;
+    <span style="color:black">{{ index (split .Title " > ") 1 }}</span>
+</div>

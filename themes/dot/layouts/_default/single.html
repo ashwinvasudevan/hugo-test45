@@ -1,0 +1,207 @@
+{{ partial "head.html" . }}
+
+{{ "<!-- Main Stylesheet -->" | safeHTML }}
+{{ $styles := resources.Get "css/style.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+{{ $styles := resources.Get "css/styles.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+<div class="container mb-100">
+  {{ "<!-- navigation -->" | safeHTML }}
+  {{ partial "navigation.html" . }}
+  {{ "<!-- /navigation -->" | safeHTML }}
+</div>
+
+<section class="single pt-5 bg-gray">
+  <div class="container" id="breadcrumbsDesk" style="font-size: 1.5rem;">
+    {{ partial "breadcrumbs.html" . }}
+  </div>
+</section>
+
+<!-- details page -->
+<section class="single pt-5 bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3" style="margin-bottom:20px">
+        <div class="wrapper" style="text-align: center;">
+          <button style="margin-bottom: 30px;" class="btn btn-primary btn-text collapsed hidden visible-xs" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
+            <span>Show Navigation</span><b>Hide Navigation</b>
+          </button>
+        </div>
+
+        <div class="collapse dont-collapse-sm" id="sidebarCollapse">
+          <div class="container" id="breadcrumbsMob" style="padding:0 !important;font-size: 1.1rem;margin-bottom: 1.5rem;">
+            {{ partial "breadcrumbs.html" . }}
+          </div>
+          <div class="p-5 bg-white" style="padding-bottom: 0!important;">
+            <h2 style="margin-bottom: 0 !important;margin-top: 15px;font-size: 32px;font-weight: 300;line-height: 1.2;">{{ index (split .Parent.Title " > ") 1 }}</h2>
+            {{ $title := .Title }}
+
+            <div class="singleCollapse">
+              <h4 class="panel-title single-sections 
+              {{ range (where .Site.Pages "Type" "Getting Started") }}
+              {{ if eq .Title $title }}{{ else }}collapsed{{ end }}
+              {{ end }}" data-toggle="collapse" data-target="#gettingStarted" {{ range (where .Site.Pages "Type" "Getting Started") }} {{ if eq .Title $title }}aria-expanded="true" {{ else }}aria-expanded="false" {{ end }} {{ end }} style="padding-top: 1.5rem !important;">
+                Getting Started
+              </h4>
+              <ul id="gettingStarted" class="single-ul collapse list-unstyled list-ul article-section 
+              {{ range (where .Site.Pages "Type" "Getting Started") }}{{ if eq .Title $title }}show{{ end }}{{ end }}">
+                {{ range (where .Site.Pages "Type" "Getting Started") }}
+                <li><a class="listContent {{ if eq .Title $title }}singleActive{{ end }}" href="{{ .Permalink }}">{{ .Params.shorttitle }}</a></li>
+                {{ end }}
+              </ul>
+            </div>
+
+            <!-- <div class="singleCollapse">
+              <h4 class="panel-title single-sections 
+              {{ range (where .Site.Pages "Type" "Basics") }}
+              {{ if eq .Title $title }}{{ else }}collapsed{{ end }}
+              {{ end }}" data-toggle="collapse" data-target="#basics" {{ range (where .Site.Pages "Type" "Basics") }} {{ if eq .Title $title }}aria-expanded="true" {{ else }}aria-expanded="false" {{ end }} {{ end }}>Basics<div class="expand_caret caret"></div>
+              </h4>
+              <ul id="basics" class="single-ul collapse list-unstyled list-ul article-section
+              {{ range (where .Site.Pages "Type" "Basics") }}{{ if eq .Title $title }}show{{ end }}{{ end }}">
+                {{ range (where .Site.Pages "Type" "Basics") }}
+                <li><a class="listContent {{ if eq .Title $title }}singleActive{{ end }}" href="{{ .Permalink }}">{{ .Params.shorttitle }}</a></li>
+                {{ end }}
+              </ul>
+            </div>
+
+            <div class="singleCollapse">
+              <h4 class="panel-title single-sections 
+              {{ range (where .Site.Pages "Type" "Features") }}
+              {{ if eq .Title $title }}{{ else }}collapsed{{ end }}
+              {{ end }}" data-toggle="collapse" data-target="#features" {{ range (where .Site.Pages "Type" "Features") }} {{ if eq .Title $title }}aria-expanded="true" {{ else }}aria-expanded="false" {{ end }} {{ end }}>Features<div class="expand_caret caret"></div>
+              </h4>
+              <ul id="features" class="single-ul collapse list-unstyled list-ul article-section
+              {{ range (where .Site.Pages "Type" "Features") }}{{ if eq .Title $title }}show{{ end }}{{ end }}">
+                {{ range (where .Site.Pages "Type" "Features") }}
+                <li><a class="listContent {{ if eq .Title $title }}singleActive{{ end }}" href="{{ .Permalink }}">{{ .Params.shorttitle }}</a></li>
+                {{ end }}
+              </ul>
+            </div>
+
+            <div class="singleCollapse">
+              <h4 class="panel-title single-sections 
+              {{ range (where .Site.Pages "Type" "FAQ") }}
+              {{ if eq .Title $title }}{{ else }}collapsed{{ end }}
+              {{ end }}" data-toggle="collapse" data-target="#faq" {{ range (where .Site.Pages "Type" "FAQ") }} {{ if eq .Title $title }}aria-expanded="true" {{ else }}aria-expanded="false" {{ end }} {{ end }}>FAQ<div class="expand_caret caret"></div>
+              </h4>
+              <ul id="faq" class="single-ul collapse list-unstyled list-ul article-section
+              {{ range (where .Site.Pages "Type" "FAQ") }}{{ if eq .Title $title }}show{{ end }}{{ end }}">
+                {{ range (where .Site.Pages "Type" "FAQ") }}
+                <li><a class="listContent {{ if eq .Title $title }}singleActive{{ end }}" href="{{ .Permalink }}">{{ .Params.shorttitle }}</a></li>
+                {{ end }}
+              </ul>
+            </div> -->
+
+          </div>
+          <div class="mb-5 bg-white p-4" style="padding-left: 35px !important;">
+            {{with .Site.Params.topics.topics}} <h4 style="font-size: 24px;line-height: 1.2;font-weight: 700;margin-bottom: 15px;" class="mb-4">{{ . }}</h4> {{ end }}
+            <ul class="list-unstyled list-ul" style="padding-left: 0;margin-bottom: 20px !important;list-style-type: none; margin: 0;">
+              {{ $title := .Parent.Title }}
+              {{ range (where .Site.Pages "Type" "pages") }}
+              {{ if ne .Title $title }}
+              <li style="padding-left: 12px;position: relative;"><a class="listContent" href="{{ .Permalink }}">{{ index (split .Title " > ") 1 }}</a></li>
+              {{ end }}
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white collapse dont-collapse-sm" style="display:none !important;">
+          {{$currentNode := .}}
+          <nav class="sidebar-menu">
+            <ul class="list-styled">
+              {{- range .Site.Sections.ByWeight -}}
+              {{template "menu" dict "sect" . "currentnode" $currentNode}}
+              {{- end -}}
+            </ul>
+          </nav>
+
+          {{define "menu"}}
+          {{- $currentNode := .currentnode -}}
+          {{ with .sect }}
+          {{ if in .Site.Params.menu_exclusion .Section }}
+          {{- else -}}
+          {{- safeHTML .Params.head -}}
+          <li class="{{ if .IsAncestor $currentNode }}parent d-block {{ end }}{{ if eq .File.UniqueID $currentNode.File.UniqueID }} active {{ end }}{{ if .Params.alwaysopen }} parent {{ end }}"><a class="singleContent singleTitle" href="{{ .Permalink }}">{{ .Params.shorttitle }}</a>
+            {{- $numberOfPages := (add (len .Pages) (len .Sections)) -}}
+            {{if ne $numberOfPages 0}}
+            <ul class="{{ if .IsAncestor $currentNode }}sub-menu{{ end }}">
+              {{- .Scratch.Set "pages" .Data.Pages -}}
+              {{- $pages := (.Scratch.Get "pages") -}}
+              {{- range $pages.ByWeight -}}
+              {{template "menu" dict "sect" . "currentnode" $currentNode}}
+              {{- end -}}
+            </ul>
+            {{end}}
+          </li>
+          {{- end -}}
+          {{- else -}}
+          {{- if not .Params.Hidden -}}
+          <li class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{ end }}"><a class="singleContent" href="{{ .Permalink }}">{{ .Params.shorttitle }}</a></li>
+          {{- end -}}
+          {{ end -}}
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="col-lg-9" style="margin-bottom:20px">
+        <div class="p-5 bg-white xcontent">
+          <h1 style="margin-top: 10px;margin-bottom: 40px;">{{ index (split .Title " > ") 1 }}</h1>
+          {{ .Content }}
+          </br>
+          <p class="post-meta border-bottom pb-3 mb-0">Updated on {{ .PublishDate.Format "02 Jan 2006" }}</p>
+          {{- $currentNode := . -}}
+          <nav class="pagination mt-3">
+            {{- template "pagination" dict "menu" .Site.Home "currentnode" $currentNode "menu_exclusion" .Site.Params.menu_exclusion -}}
+            {{- with ($.Scratch.Get "prevPage") -}}
+            <a style="display: inline-block; max-width: 48%;" class="nav nav-prev navContent" href="{{ .Permalink }}" title="{{ index (split .Title " > ") 1 }}"><i class="ti-arrow-left mr-2"></i>{{ .Params.shorttitle }}</a>
+            {{ end -}}
+            {{- with ($.Scratch.Get "nextPage") -}}
+            <a style="display: inline-block; text-align: -webkit-right; max-width: 48%;" class="nav nav-next navContent" href="{{ .Permalink }}" title="{{ index (split .Title " > ") 1 }}">{{ .Params.shorttitle }}<i class="ti-arrow-right ml-2"></i></a>
+            {{- end }}
+          </nav>
+
+          {{- define "pagination" -}}
+          {{- $currentNode := .currentnode -}}
+          {{- $menu_exclusion := .menu_exclusion -}}
+
+          {{- if hasPrefix $currentNode.Permalink .menu.Permalink -}}
+          {{- $currentNode.Scratch.Set "NextPageOK" "OK" -}}
+          {{- if .menu.IsHome -}}
+          {{- $currentNode.Scratch.Set "prevPage" "" -}}
+          {{- else -}}
+          {{- $currentNode.Scratch.Set "prevPage" ($currentNode.Scratch.Get "prevPageTmp") -}}
+          {{- end -}}
+          {{- else -}}
+          {{- if eq ($currentNode.Scratch.Get "NextPageOK") "OK" -}}
+          {{- $currentNode.Scratch.Set "NextPageOK" nil -}}
+          {{ if in $menu_exclusion .menu.Section }}
+          {{- else -}}
+          {{- $currentNode.Scratch.Set "nextPage" .menu -}}
+          {{- end -}}
+          {{- end -}}
+          {{- end -}}
+
+          {{- $currentNode.Scratch.Set "prevPageTmp" .menu -}}
+          {{- $currentNode.Scratch.Set "pages" .menu.Pages -}}
+          {{- if .menu.IsHome -}}
+          {{- $currentNode.Scratch.Set "pages" .menu.Sections -}}
+          {{- else if .menu.Sections -}}
+          {{- $currentNode.Scratch.Set "pages" (.menu.Pages | union .menu.Sections) -}}
+          {{- end -}}
+          {{- $pages := ($currentNode.Scratch.Get "pages") -}}
+          {{- range $pages.ByWeight -}}
+          {{- template "pagination" dict "menu" . "currentnode" $currentNode "menu_exclusion" $menu_exclusion -}}
+          {{- end -}}
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+{{ partial "footer.html" . }}

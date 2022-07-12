@@ -1,0 +1,81 @@
+<footer class="footer pad-d-80 bg-gray">
+  <div class="container pad-b-80 ">
+    <div class="row">
+      <div class="d-none d-lg-block col-lg-2">
+        <ul>
+          <li class="mr-b-20"><a href="{{ .Site.Params.siteURL }}about" class="nav-link a">About</a></li>
+          <li class="mr-b-20"><a href="{{ .Site.Params.siteURL }}kb/help/contact-us/" class="nav-link a">Contact</a></li>
+          <li class="mr-b-20"><a href="{{ .Site.Params.siteURL }}pricing" class="nav-link a">Pricing</a></li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block col-lg-2">
+          <ul>
+          <li class="mr-b-20"><a href="{{ .Site.Params.siteURL }}enterprise" class="nav-link a">Enterprise</a></li>
+          <li class="mr-b-20"><a href="{{ .Site.Params.siteURL }}features" class="nav-link a">Features</a></li>
+          </ul>
+      </div>
+      <div class="d-none d-lg-block col-lg-3">
+        <ul>
+          <li class="mr-b-20"><a href="{{ .Site.Params.siteURL }}blog/" class="nav-link a">Blog</a></li>
+          <li class="mr-b-20"><a href="{{ .Site.Params.siteURL }}docs" class="nav-link a">Docs</a></li>
+      </ul>
+      </div>
+      <div class="col-lg-3"></div>
+      <div class="d-none d-lg-block col-lg-2">
+        <ul class="users-social-media d-flex align-items-center justify-content-center justify-content-lg-start">    
+          {{ range .Site.Params.socialIcon }}
+            <li><a href="{{ .linkURL }}" class="no-line"><i class="{{ .icon }}"></i></a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="container-wrapper withlovebd">
+      <div class="container">
+        <div class="row">
+          <div class="bd-row col-12">
+            <div class="d-flex justify-content-between">
+              <p class="txt-left no-pad withlovebd-rights-reserved">&copy;{{ now.Format "2006" }} All Rights Reserved Neemb LLC</p>
+              <p class="txt-left no-pad">
+                <span class="footer-meta"><a href="{{ .Site.Params.siteURL }}privacy-policy/">&nbsp;Privacy Policy</a></span> <span class="pipe">|</span>
+                <span class="footer-meta"><a href="{{ .Site.Params.siteURL }}terms-of-service/">&nbsp;Terms of Service</a></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+
+{{ "<!-- /footer -->" | safeHTML }}
+
+{{ "<!-- Bootstrap JS -->" | safeHTML }}
+<script src="{{ .Site.BaseURL }}plugins/bootstrap/bootstrap.min.js"></script>
+{{ "<!-- highlight -->" | safeHTML }}
+<script src="{{ .Site.BaseURL }}plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+{{ "<!-- Main Script -->" | safeHTML }}
+{{ $script := resources.Get "js/script.js" | minify}}
+<script src="{{ $script.Permalink }}"></script>
+
+{{ $script := resources.Get "js/vendor.js" | minify}}
+<script src="{{ $script.Permalink }}" charset="utf-8"></script>
+
+<script type="text/nojavascript">
+window.$crisp=[];window.CRISP_WEBSITE_ID="df5793ca-1803-40f1-aea2-0e0e9cc6ffa0";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+fetch('/api/v1/users/self').then(async (res) => {
+  console.log('user res:', res);
+  if(!res.ok) {
+    return;
+  }
+  let user = await res.json();
+  $crisp.push(['set', 'user:email', [user.email]]);
+  $crisp.push(['set', 'user:nickname', [user.full_name || user.name]]);
+});
+</script>

@@ -1,0 +1,69 @@
+<div class="primary-nav-faux"></div>
+<header class="header primary-nav bg-pale-blue">
+
+  <div class="container">
+    <div class="row header-row">
+      <div class="nav-col col-sm-12">
+        <div class="nav-band d-flex justify-content-between align-items-center">
+          <div class="nav nav-left">
+            <div class="logo">
+              <a href="{{ .Site.Params.siteURL }}" class="logo-anchor no-line">
+                <img src="{{ .Site.BaseURL }}images/logo-classic.svg" class="logo-image" alt="" /> Distill.io
+              </a>
+            </div>
+            <a style='position: absolute;right: 0;top: 0;background-color: #fff;z-index: 1111111; border-left: solid 1px;border-bottom: solid 1px;padding: 2px 10px;'
+            href='/community/covid-19-vaccine-availability/' title='Community powered free covid-19 vaccine availability tracker'>
+              Monitor Covid-19 Vaccine Availability for Free
+            </a>
+          </div>
+          <div class="nav nav-right">
+            <nav class="mobile-nav d-lg-none">
+              <ul class="mobile-nav-inner">
+                <li class="nav-item">
+                  <a href="{{ .Site.Params.siteURL }}#extensions-section" class="nav-btn btn-primary">Get started</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="hamburger">
+              <div class="hamburger-inner">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+
+            <nav class="main-nav nav-links-container">
+              <div class="main-nav-flex-row d-flex flex-column">
+                <ul class="main-nav-inner nav-col-padding">
+                  <li class="nav-item">
+                    <a href="{{ .Site.Params.siteURL }}blog" class="nav-link grey-hover">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ .Site.Params.siteURL }}docs" class="nav-link grey-hover">Docs</a>
+                  </li>
+                </ul>
+                <div class="d-lg-none nav-col-padding">
+                  <a href="{{ .Site.Params.siteURL }}#extensions-section" class="btn-primary full-w">Get started for free</a>
+                </div>
+                <ul class="additional-links d-lg-none nav-col-padding d-flex justify-content-around txt-center mr-t-40">
+                  <li><a href="{{ .Site.Params.siteURL }}about" class="h6 a grey-hover">About</a></li>
+                  <li><a href="{{ .Site.Params.siteURL }}kb/help/contact-us/" class="h6 a grey-hover">Contact</a></li>
+                </ul>
+              </div>
+              <div class="d-lg-none nav-social-media nav-col-padding pad-bt-20">
+                <ul class="users-social-media d-flex align-items-center justify-content-center justify-content-lg-start">    
+                  {{ range .Site.Params.socialIcon }}
+                    <li><a href="{{ .linkURL }}" class="no-line"><i class="{{ .icon }}"></i></a></li>
+                  {{ end }}
+                </ul>
+              </div>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>

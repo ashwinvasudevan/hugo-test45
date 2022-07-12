@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    {{- partial "head.html" . -}}
+    <body>
+        <div class="container mb-100">
+            {{ "<!-- navigation -->" | safeHTML }}
+            {{ partial "navigation.html" . }}
+            {{ "<!-- /navigation -->" | safeHTML }}
+        </div>
+
+        <section class="faq-hero bg-pale-blue">
+            <div class="container pad-b-120">
+                <div class="row justify-content-center">
+                    {{ partial "banner.html" . }}
+                </div>
+            </div>
+            <div class="droplet-container"><div class="container"> <img style="margin-top: -11%;float: right;" src="{{ .Site.BaseURL }}images/droplets/droplet-kb.png" class="faq-hero-droplet" id="kb-droplet"></div></div>
+        </section>
+
+        <div id="content">
+        {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+
+
+    </body>
+</html>

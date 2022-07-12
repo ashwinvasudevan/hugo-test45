@@ -1,0 +1,55 @@
+#faqHeading {
+    font-size:5rem !important;
+}
+.faqTitle {
+    font-size:19px !important;
+    font-weight: 600 !important;
+    color: black;
+    padding: 20px;
+}
+
+.faqTitle:hover, .faqTitle:focus {
+    color: #0086ff;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .2s ease;
+}
+.faqTitle:after {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0;
+    height: 0 !important;
+}
+
+.card-body {
+    padding: 0px 20px 20px 20px;
+    font-family: GT Walsheim,Helvetica Neue,Arial,sans-serif;
+    font-size: 20px;
+    line-height: 130%;
+    font-weight: 300;
+    font-style: normal;
+    color: rgba(0,0,0,.84);
+    letter-spacing: normal;
+}
+
+@media screen and (max-width:600px) {
+    #faqHeading {
+        font-size:3rem !important;
+    }
+    #breadCrumbs {
+        font-size:11px !important;
+    }
+    .faqTitle {
+        font-size:17px !important;
+    }
+    .card-body {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container1 {
+        max-width: 960px !important;
+    }
+}

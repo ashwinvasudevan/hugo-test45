@@ -1,0 +1,32 @@
+<style>  
+        {{ with .Get `chapter-id`}} #{{.}} {{ end }} a {
+            {{ with .Get `link-color`}} color: {{.}} !important;{{ end }}
+        }
+
+        {{ with .Get `chapter-id`}} #{{.}} {{ end }} * {
+            {{ with .Get "text-color"}} color: {{.}} !important;{{ end }}
+        }
+        
+        {{ with .Get `chapter-id`}} #{{.}} {{ end }} blockquote {
+            {{ with .Get "blockquote-border-color"}} border-left: 2px solid {{.}} !important;{{ end }}
+            {{ with .Get "blockquote-background-color"}} background-color: {{.}} !important;{{ end }}
+        }
+
+        {{ with .Get `chapter-id`}} #{{.}} {{ end }} blockquote * {
+            {{ with .Get "blockquote-text-color"}} color: {{.}} !important;{{ end }}
+            {{ with .Get "blockquote-background-color"}} background-color: {{.}} !important;{{ end }}
+        }
+
+        {{ with .Get `chapter-id`}} #{{.}} {{ end }} blockquote a {
+            {{ with .Get "blockquote-link-color"}} color: {{.}} !important;{{ end }}
+        }
+    
+    </style>
+
+</div>
+<div id="{{ with .Get `chapter-id`}}{{.}}{{ end }}" class="container chap p-5"  style="{{ with .Get `background-color`}} background-color: {{.}};{{ end }}">
+    <h2><strong>{{ with .Get "chapter-number"}}{{.}}{{ end }}</strong>{{ with .Get "chapter-title"}}{{.}}{{ end }}</h2>
+    <hr style="border-top: 1px solid hsla(0,0%,100%,.2);padding-bottom: 45px;">
+    {{.Inner}}
+</div>
+<div class="p-5 bg-white xcontent" style="padding-top: 1px !important;">

@@ -1,0 +1,56 @@
+<style>
+.container3 {
+    background-color: #e9ecef;
+    padding: 16px;
+    margin: 16px 0
+}
+
+.container3::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container3 img {
+    float: left;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container3 a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container3 p {
+    margin-top: 10px;
+}
+
+#bio {
+    font-size: 16px !important;
+    color:#687a86;
+}
+
+@media (max-width: 500px) {
+    .container3 {
+        text-align: center;
+    }
+    .container3 img {
+        margin: auto;
+        float: none;
+        display: block;
+        padding: 0;
+    }
+    #bio {
+        font-size: 12px !important;
+    }
+}
+</style>
+
+<div class="container3" style="{{ with .Get `background-color`}} background-color: {{.}};{{ end }}">
+    <img src="{{ with .Get `src`}}{{.}}{{ end }}" alt="{{ with .Get `alt`}}{{.}}{{ end }}" style="width:90px">
+    <p><a href="{{ with .Get `link`}}{{.}}{{ end }}" target="_blank">{{ with .Get "name"}}{{.}}{{ end }}</a></p>
+    <p id="bio">{{ with .Get "bio"}}{{.}}{{ end }}</p>
+</div>

@@ -1,0 +1,153 @@
+{{ define "main" }}
+
+{{ $styles := resources.Get "css/faq.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+<style>
+  #contactSec {
+    padding: 100px 20px 150px 20px;
+  }
+  #faqSec {
+    padding: 100px 0 40px 0;
+    }
+  .kbSecTitle {
+    font-size: 4.5rem !important;
+  }
+  #accordion {
+    text-align: left;
+    padding: 0 17%;
+  }
+  #blankSec {
+    height: 100px;
+  }
+  .titlePad {
+    margin-bottom:60px !important;
+  }
+  #ctaSec {
+    padding-bottom: 40px;
+  }
+
+  @media screen and (max-width:600px) {
+    #contactSec {
+      padding: 50px 20px 100px 20px;
+    }
+    #faqSec {
+      padding: 50px 0px 40px 0px;
+    }
+    .kbSecTitle {
+      font-size: 2.8rem !important;
+    }
+    #accordion {
+      text-align: left;
+      padding: 0 0 5% 0;
+    }
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    #blankSec {
+      height: 60px;
+    }
+    .titlePad {
+      margin-bottom:40px !important;
+    }
+    #ctaSec {
+      padding-bottom: 20px;
+    }
+  }
+</style>
+
+  {{ "<!-- topics -->" | safeHTML }}
+  <section class="section bg-gray">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              {{with .Site.Params.topics.title}} <h2 class="section-title kbSecTitle titlePad">{{ . }}</h2> {{ end }}
+            </div>
+            {{ "<!-- topic-item -->" | safeHTML }}
+            {{ range (where .Site.Pages "Type" "pages") }}
+            <div class="col-lg-4 col-sm-6 mb-4">
+              <a href="{{ .Permalink }}" class="px-4 py-5 bg-white shadow text-center d-block" style="padding: 48px 24px !important;">
+                <i class="{{ .Params.Icon }} icon text-dark d-block mb-4"></i>
+                <h3 class="mb-3" style="margin: 0 !important;">{{ index (split .Title " > ") 1 }}</h3>
+              </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+  </section>
+  {{ "<!-- /topics -->" | safeHTML }}
+
+  {{ $data := index .Site.Data .Site.Language.Lang }}
+  {{ "<!-- faq -->" | safeHTML }}
+  <section class="bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+              {{with .Site.Params.faq.title}} <h2 class="mb-4 kbSecTitle titlePad">{{ . }}</h2> {{ end }}
+            {{ "<!-- accordion -->" | safeHTML }}
+            <div id="accordion">
+              {{ range $data.faq.faqItem }}
+              {{ "<!-- accordion item -->" | safeHTML }}
+              <div class="card mb-4 rounded-0 shadow border-0">
+                <div class="card-header rounded-0 bg-white border p-0 border-0">
+                  <a id="{{ .ID }}_title" class="card-link d-flex tex-dark mb-0 justify-content-between faqTitle" data-toggle="collapse" href="#{{ .ID }}">
+                    <span>{{ .title }}</span> <i class="ti-plus text-primary text-right"></i>
+                  </a>
+                </div>
+                <div id="{{ .ID }}" class="collapse" data-parent="#{{ .ID }}_title">
+                  <div id="{{ .ID }}_text" class="card-body font-secondary text-color">{{ .content }}</div>
+                </div>
+              </div>
+              {{ end }}
+
+              <!-- Javascript -->
+              <script>
+                function myFunction(content) {
+                  var text = content.replace(
+                    /((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?)/g,
+                    '<a href="$1">$1</a>'
+                  );
+                  return text;
+                }
+  
+                $(document).ready(function() {
+                  {{ range $data.faq.faqItem }}
+                    document.getElementById('{{ .ID }}_text').innerHTML = myFunction('{{ .content }}');
+                  {{ end }}
+                });
+              </script>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ "<!-- /faq -->" | safeHTML }}
+
+  <section id="blankSec" class="bg-gray"></section>
+
+  {{ if .Site.Params.cta.enable }}
+  {{ "<!-- call to action -->" | safeHTML }}
+  <section class="bg-gray" id="ctaSec">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div id="contactSec" class="section bg-white shadow text-center">
+          {{ with .Site.Params.cta.title }} <h2 class="mb-4 kbSecTitle">{{ . }}</h2> {{ end }}
+          {{ with .Site.Params.cta.description }} <p style="line-height: 1.8;color:#636363;" class="mb-4">{{ . }}</p> {{ end }}
+          <a href="{{ .Site.Params.siteURL }}kb/help/contact-us/" class="btn btn-primary">{{ with .Site.Params.cta.btnText}}{{ . }}{{ end }}</a>
+          <div style="margin-top: 20px;">
+            <div class="droplet-container"><div class="container"> <img style="margin-top: -3.2%;margin-left: 8%;float: left;" src="{{ .Site.BaseURL }}images/droplets/droplet-coffee.svg" class="faq-hero-droplet droplet-question"></div></div>
+            <div class="droplet-container"><div class="container"> <img style="margin-top: -3.2%;margin-right: 8%;float: right;" src="{{ .Site.BaseURL }}images/droplets/droplet-headphones.svg" class="faq-hero-droplet droplet-question"></div></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ "<!-- /call to action -->" | safeHTML }}
+  {{ end }}
+
+{{ end }}

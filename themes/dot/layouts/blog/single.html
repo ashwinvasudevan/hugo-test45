@@ -1,0 +1,56 @@
+{{ partial "head.html" . }}
+
+{{ "<!-- Main Stylesheet -->" | safeHTML }}
+{{ $styles := resources.Get "css/style.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+{{ $styles := resources.Get "css/styles.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+<div class="container mb-100">
+  {{ "<!-- navigation -->" | safeHTML }}
+  {{ partial "navigation.html" . }}
+  {{ "<!-- /navigation -->" | safeHTML }}
+</div>
+
+<!-- details page -->
+<section class="single pt-5 bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="single py-5">
+        <div class="" id="breadCrumbs" style="font-size: 1.5rem;">
+          <div id="breadcrumbs" style="color:grey;">
+            <a href="{{ .Site.BaseURL }}">{{with .Site.Params.breadcrumbs.home}}{{ . }}{{ end }}</a>
+            &#187;
+            <a href="{{ .Site.BaseURL }}blog">{{with .Site.Params.breadcrumbs.blog}}{{ . }}{{ end }}</a>
+            &#187;
+            <span style="color:black;">{{ .Title }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12" style="margin-bottom:20px">
+        <div class="p-5 bg-white xcontent">
+          <h1 style="margin-top: 10px;margin-bottom: 20px;">{{ .Title }}</h1>
+          <div class="d-flex flex-wrap" style="margin-top: 10px;margin-bottom: 20px;">
+            <p class="post-meta pr-2 border-end">By {{ .Params.Author }}</p>
+            <p class="post-meta px-2 mr-2 border-end">Updated on {{ .PublishDate.Format "Jan 2, 2006" }}</p>
+            {{ range $i, $e := .Params.tags }}
+              <a 
+                class="fs-5 btn bg-pale-blue border rounded-pill mr-3 mb-1"
+                href='{{ delimit (slice "/tags/" (urlize .) $.Site.Params.ugly) "" | relURL }}/'
+              >
+                {{ $e }}
+              </a>
+            {{ end }}
+          </div>
+          {{ .Content }}
+          </br>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e14d5fb1-1676-4409-b48b-946e7fff9808/deploy-status)](https://app.netlify.com/sites/fervent-hawking-fe677a/deploys)

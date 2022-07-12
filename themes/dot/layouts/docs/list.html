@@ -1,0 +1,63 @@
+{{ define "main" }}
+
+<section class="single pt-5 bg-gray">
+  <div class="container" id="breadcrumbsDesk" style="font-size: 1.5rem;">
+    <div id="breadcrumbs" style="color:grey;">
+      <a href="{{ .Site.Params.siteURL }}">{{with .Site.Params.breadcrumbs.home}}{{ . }}{{ end }}</a>
+      &#187;
+      <span style="color:black;">{{ .Title}}</span>
+    </div>
+  </div>
+</section>
+
+{{ "<!-- details page -->" | safeHTML }}
+<section class="single section section1 bg-gray pb-0" style="padding-top: 30px !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9" style="margin-bottom:20px">
+        <div class="p-5 bg-white">
+          <div class="listCollapse">
+            <h4 class="panel-title" data-toggle="collapse" data-target="#gettingStarted" aria-expanded="true" style="padding-top: 1.5rem !important;">
+              Getting Started
+            </h4>
+            <ul id="gettingStarted" class="collapse show list-unstyled list-ul article-section">
+              {{ range (where .Site.Pages "Type" "Getting Started") }}
+              <li><a class="listContent" href="{{ .Permalink }}">{{ index (split .Title " > ") 1 }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+          <!-- <div class="listCollapse">
+            <h4 class="panel-title" data-toggle="collapse" data-target="#basics" aria-expanded="true">Basics<div class="expand_caret caret"></div>
+            </h4>
+            <ul id="basics" class="collapse show list-unstyled list-ul article-section">
+              {{ range (where .Site.Pages "Type" "Basics") }}
+              <li><a class="listContent" href="{{ .Permalink }}">{{ index (split .Title " > ") 1 }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+          <div class="listCollapse">
+            <h4 class="panel-title" data-toggle="collapse" data-target="#features" aria-expanded="true">Features<div class="expand_caret caret"></div>
+            </h4>
+            <ul id="features" class="collapse show list-unstyled list-ul article-section">
+              {{ range (where .Site.Pages "Type" "Features") }}
+              <li><a class="listContent" href="{{ .Permalink }}">{{ index (split .Title " > ") 1 }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+          <div class="listCollapse">
+            <h4 class="panel-title" data-toggle="collapse" data-target="#faq" aria-expanded="true">FAQ<div class="expand_caret caret"></div>
+            </h4>
+            <ul id="faq" class="collapse show list-unstyled list-ul article-section">
+              {{ range (where .Site.Pages "Type" "FAQ") }}
+              <li><a class="listContent" href="{{ .Permalink }}">{{ index (split .Title " > ") 1 }}</a></li>
+              {{ end }}
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ "<!-- /details page -->" | safeHTML }}
+
+{{ end }}
