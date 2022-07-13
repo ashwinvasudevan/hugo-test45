@@ -30,3 +30,10 @@ jobs:
 
       - name: Build
         run: hugo --minify
+
+      - name: Deploy
+        uses: D3rHase/rsync-deploy-action@latest
+        with:
+          HOST: ${{secrets.HOST}}                             # Remote server address / ip - Required: true
+          USER: ${{secrets.USER}}                             # Remote server user - Required: true
+          PRIVATE_SSH_KEY: ${{secrets.PRIVATE_SSH_KEY}}       # Private ssh key registered on the remote server - Required: true
