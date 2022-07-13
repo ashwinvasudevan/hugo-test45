@@ -22,3 +22,15 @@ whiteColor = "#ffffff"
       home = "Home"
       blog = "Blog"
       docs = "Docs"
+# footer social icon
+    [[Languages.en.socialIcon]]
+      icon = "ti-twitter-alt"
+      linkURL = "https://twitter.com/scrapex_ai"
+
+    [[Languages.en.socialIcon]]
+      icon = "ti-facebook"
+      linkURL = "https://www.facebook.com/Official.ScrapeX/"
+      
+    [[Languages.en.socialIcon]]
+      icon = "ti-linkedin"
+      linkURL = "https://www.linkedin.com/company/scrapex-ai/"
