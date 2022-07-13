@@ -32,7 +32,7 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        uses: D3rHase/rsync-deploy-action@latest
+        uses: D3rHase/rsync-deploy-action@v0.2
         with:
           HOST: ${{secrets.HOST}}                             # Remote server address / ip - Required: true
           USER: ${{secrets.USER}}                             # Remote server user - Required: true
