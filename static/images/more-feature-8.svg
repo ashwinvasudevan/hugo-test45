@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="96" height="80" viewBox="0 0 96 80">
-  <g fill="#FFF" stroke="#C7CFD5" stroke-linecap="square" stroke-linejoin="round" stroke-width="4" transform="matrix(-1 0 0 1 76 13)">
-    <rect width="36" height="36" rx="4" transform="translate(20)"/>
-    <rect width="36" height="36" rx="4" transform="translate(10 9)"/>
-    <rect width="36" height="36" rx="4" transform="translate(0 19)"/>
-  </g>
-</svg>
