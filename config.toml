@@ -4,6 +4,7 @@ title = "Scrapex Lite"
 themesDir = "themes"
 theme = "dot"
 paginate = 9
+publishDir = "build"
 
 [params]
 siteURL = "https://distill.io/"
